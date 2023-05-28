@@ -1,8 +1,17 @@
 
 const redux=require('redux');
 const createStore=redux.createStore;
+const applyMiddleware=redux.applyMiddleware
 
 const combineReducer=redux.combineReducers
+
+const {createLogger}=require('redux-logger')
+
+//creating logger as middleware
+
+const logger = createLogger({
+    timestamp :true
+  });
 
 
 const BUY_CAKE="buy_cake";
@@ -64,7 +73,7 @@ const rootReducer=combineReducer({
     iceCream:iceCreamReducer
 })
 
-const store=createStore(rootReducer);
+const store=createStore(rootReducer, applyMiddleware(logger));
 
 
 // console.log({"initial state ":initialState});
