@@ -17,6 +17,7 @@ const logger = createLogger({
 const BUY_CAKE="buy_cake";
 const BUY_ICECREAM='buy_icecream'
 
+//actions creators
 const buyCake=()=>{
     return {
         type:BUY_CAKE,
@@ -24,6 +25,8 @@ const buyCake=()=>{
     }
 
 }
+
+//  actions creator
 
 const buyIceCream=()=>{
     return {
@@ -90,4 +93,4 @@ store.dispatch(buyIceCream())
 store.dispatch(buyIceCream())
 
 
-unsubscribe()
+unsubscribe();
